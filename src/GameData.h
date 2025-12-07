@@ -68,4 +68,6 @@ struct GameData
     int32_t max_hand_size = 8;
     PokerHandStats poker_hand_stats;
     std::vector<BossBlindType> boss_blind_pool;
+    double chip_score = 0.0;
+    double mult_score = 0.0;
 };
