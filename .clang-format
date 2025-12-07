@@ -6,9 +6,10 @@ BasedOnStyle: Google
 IndentWidth: 4
 TabWidth: 4
 UseTab: Never
-AccessModifierOffset: -1
+AccessModifierOffset: -4
 IndentCaseLabels: true
 IndentPPDirectives: BeforeHash
+IndentAccessModifiers: false
 
 # Line length
 ColumnLimit: 120

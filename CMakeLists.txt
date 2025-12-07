@@ -15,9 +15,12 @@ FetchContent_MakeAvailable(SFML)
 add_executable(balatro 
     src/main.cpp
     src/Game.cpp
-    src/model/GameModel.cpp
-    src/view/GameView.cpp
-    src/controller/GameController.cpp
+    src/StateMachine.cpp
+    src/RenderHelpers.cpp
+    src/states/MenuState.cpp
+    src/states/LevelSelectionState.cpp
+    src/states/LevelState.cpp
+    src/states/ShopState.cpp
 )
 target_compile_features(balatro PRIVATE cxx_std_17)
 target_link_libraries(balatro PRIVATE SFML::Graphics)

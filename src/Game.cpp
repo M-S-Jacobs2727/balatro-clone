@@ -2,21 +2,16 @@
 
 #include <iostream>
 
-Game::Game()
-    : model_(std::make_unique<GameModel>()),
-      view_(std::make_unique<GameView>()),
-      controller_(std::make_unique<GameController>()),
-      window_(sf::VideoMode({800, 600}), "Balatro Clone")
+#include "states/MenuState.h"
+
+Game::Game() : stateMachine_(), gameData_(), window_(sf::VideoMode({800, 600}), "Balatro Clone"), clock_()
 {
     // TODO: Configure window settings
     // window_.setFramerateLimit(60);
     // window_.setVerticalSyncEnabled(true);
 }
 
-Game::~Game()
-{
-    // Unique pointers will automatically clean up
-}
+Game::~Game() {}
 
 void Game::run()
 {
@@ -26,6 +21,9 @@ void Game::run()
     std::cout << "- Press ESC to return to menu from any state" << std::endl;
     std::cout << "- Close window to quit" << std::endl;
     std::cout << std::endl;
+
+    // Initialize with MenuState
+    stateMachine_.setState(std::make_unique<MenuState>(), gameData_);
 
     // Main game loop
     while (window_.isOpen())
@@ -50,24 +48,22 @@ void Game::processInput()
             return;
         }
 
-        // Pass event to controller for game-specific handling
-        controller_->handleInput(*event, *model_);
+        // Pass event to state machine for game-specific handling
+        stateMachine_.handleInput(*event, gameData_);
     }
 }
 
 void Game::update()
 {
-    // TODO: Add game logic updates here
-    // Examples:
-    // - Update animations
-    // - Update enemy AI
-    // - Check win/lose conditions
-    // - Update timers
-    // etc.
+    // Get delta time
+    float deltaTime = clock_.restart().asSeconds();
+
+    // Update game state
+    stateMachine_.update(deltaTime, gameData_);
 }
 
 void Game::render()
 {
-    // Delegate rendering to the view
-    view_->render(*model_, window_);
+    // Delegate rendering to the state machine
+    stateMachine_.render(window_, gameData_);
 }
