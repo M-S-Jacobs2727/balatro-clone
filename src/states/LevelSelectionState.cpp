@@ -13,7 +13,7 @@ LevelSelectionState::~LevelSelectionState() {}
 void LevelSelectionState::onEnter(GameData& data)
 {
     std::cout << "=== LEVEL SELECTION ===" << std::endl;
-    std::cout << "Current Level: " << data.currentLevel << std::endl;
+    std::cout << "Current Round: " << data.round << std::endl;
     std::cout << "Press ENTER/SPACE to select level" << std::endl;
     std::cout << "Press ESC to return to menu" << std::endl;
 }

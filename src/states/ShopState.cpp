@@ -13,7 +13,7 @@ ShopState::~ShopState() {}
 void ShopState::onEnter(GameData& data)
 {
     std::cout << "=== SHOP ===" << std::endl;
-    std::cout << "Currency: " << data.playerCurrency << std::endl;
+    std::cout << "Currency: " << data.money << std::endl;
     std::cout << "Press ENTER/SPACE to continue (return to level selection)" << std::endl;
     std::cout << "Press ESC to return to menu" << std::endl;
 }

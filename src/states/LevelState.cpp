@@ -12,8 +12,8 @@ LevelState::~LevelState() {}
 
 void LevelState::onEnter(GameData& data)
 {
-    std::cout << "=== LEVEL " << data.currentLevel << " ===" << std::endl;
-    std::cout << "Health: " << data.playerHealth << " | Currency: " << data.playerCurrency << std::endl;
+    std::cout << "=== LEVEL " << data.round << " ===" << std::endl;
+    std::cout << "Health: " << data.ante << " | Currency: " << data.money << std::endl;
     std::cout << "Press ENTER/SPACE to complete level (go to shop)" << std::endl;
     std::cout << "Press ESC to return to menu" << std::endl;
 }
