@@ -10,6 +10,7 @@ AccessModifierOffset: -4
 IndentCaseLabels: true
 IndentPPDirectives: BeforeHash
 IndentAccessModifiers: false
+NamespaceIndentation: Inner
 
 # Line length
 ColumnLimit: 120
@@ -76,7 +77,6 @@ ConstructorInitializerIndentWidth: 4
 
 # Other
 MaxEmptyLinesToKeep: 1
-NamespaceIndentation: None
 ReflowComments: true
 SortUsingDeclarations: true
 Standard: c++20
