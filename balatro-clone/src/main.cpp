@@ -1,6 +1,5 @@
-#include "AppLayer.h"
 #include "Application.h"
-#include "OverlayLayer.h"
+#include "MainMenu.h"
 
 int main()
 {
@@ -10,7 +9,6 @@ int main()
     appSpec.windowSpec.height = 1080;
 
     Core::Application application(appSpec);
-    application.pushLayer<AppLayer>();
-    application.pushLayer<OverlayLayer>();
+    application.pushLayer<MainMenu>();
     application.run();
 }

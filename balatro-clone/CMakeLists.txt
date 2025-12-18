@@ -3,6 +3,9 @@ set(SOURCES
     src/AppLayer.cpp
     src/VoidLayer.cpp
     src/OverlayLayer.cpp
+    src/Button.cpp
+    src/MainMenu.cpp
+    src/Run.cpp
 )
 
 add_executable(balatro-clone)
